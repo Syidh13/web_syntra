@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SYNTRA — AI Operating System for Bus Operations</title>
+    <title>SYNTRA — One System for Every Fleet</title>
     <meta name="description"
-        content="SYNTRA is an AI-powered platform that unifies planning, dispatch, monitoring, and optimization for bus operations. Delivered through Authorized Distributors." />
+        content="SYNTRA has 3 products: Dashboard, IoT, and Apps. Built for real operations at scale." />
 
-    <!-- TailwindCSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -35,27 +34,23 @@
         html {
             scroll-behavior: smooth;
         }
-
-        /* prevent scroll when modal open */
-        body.modal-open {
-            overflow: hidden;
-        }
     </style>
 </head>
 
 <body class="bg-slate-950 text-slate-100">
-    <!-- Soft glow background -->
+    <!-- glow -->
     <div class="pointer-events-none fixed inset-0 -z-10">
-        <div class="absolute -top-40 left-1/2 h-105 w-180 -translate-x-1/2 rounded-full bg-syntra-500/20 blur-3xl">
+        <div
+            class="absolute -top-40 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-syntra-500/25 blur-3xl">
         </div>
-        <div class="absolute -bottom-45 -left-45 h-130 w-130 rounded-full bg-emerald-500/10 blur-3xl">
+        <div class="absolute -bottom-[180px] -left-[180px] h-[520px] w-[520px] rounded-full bg-emerald-500/10 blur-3xl">
         </div>
     </div>
 
-    <!-- Header (simple) -->
+    <!-- header -->
     <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur">
         <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-            <a href="#top" class="flex items-center gap-2">
+            <a href="index.html" class="flex items-center gap-2">
                 <span
                     class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/10">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -72,281 +67,400 @@
             </a>
 
             <nav class="hidden items-center gap-5 text-sm text-slate-200 md:flex">
-                <a href="#platform" class="hover:text-white">Platform</a>
-                <a href="#gallery" class="hover:text-white">Gallery</a>
-                <a href="#distributor" class="hover:text-white">Distributor</a>
+                <a href="#products" class="hover:text-white">Products</a>
+                <a href="#story" class="hover:text-white">Proof</a>
                 <a href="#contact" class="hover:text-white">Contact</a>
             </nav>
 
-            <div class="flex items-center gap-2">
-                <a href="#distributor"
-                    class="hidden rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-slate-100 hover:bg-white/10 md:inline-flex">Distributor</a>
-                <a href="#contact"
-                    class="inline-flex items-center justify-center rounded-xl bg-syntra-500 px-3 py-2 text-sm font-semibold text-slate-950 hover:bg-syntra-400">Talk</a>
-            </div>
+            <a href="#contact"
+                class="inline-flex items-center justify-center rounded-xl bg-syntra-500 px-3 py-2 text-sm font-semibold text-slate-950 hover:bg-syntra-400">Talk</a>
         </div>
     </header>
 
-    <!-- HERO (simple) -->
-    <section id="top">
-        <div class="mx-auto max-w-6xl px-4 py-16">
-            <p
-                class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
-                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                Proven at megacity scale. Built in Indonesia.
+    <!-- hero -->
+    <section class="mx-auto max-w-6xl px-4 py-16">
+        <p
+            class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            Proven at megacity scale. Built in Indonesia.
+        </p>
+
+        <div class="mt-5 max-w-3xl">
+            <h1 class="text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
+                One System for Every Fleet
+            </h1>
+            <p class="mt-4 text-base leading-relaxed text-slate-200 md:text-lg">
+                SYNTRA is a product suite for real operations: control center dashboards, connected IoT, and
+                passenger-facing apps.
             </p>
 
-            <div class="mt-5 max-w-3xl">
-                <h1 class="text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
-                    The AI Operating System for <span class="text-syntra-300">Bus Operations</span>
-                </h1>
-                <p class="mt-4 text-base leading-relaxed text-slate-200 md:text-lg">
-                    Unify planning, dispatch, monitoring, and optimization in one platform. Fast decisions, clear
-                    control, real operations.
-                </p>
-
-                <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-                    <a href="#platform"
-                        class="inline-flex items-center justify-center rounded-2xl bg-syntra-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-syntra-400">Explore</a>
-                    <a href="#gallery"
-                        class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-white/10">See
-                        visuals</a>
-                </div>
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+                <a href="#products"
+                    class="inline-flex items-center justify-center rounded-2xl bg-syntra-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-syntra-400">Explore
+                    products</a>
+                <a href="#contact"
+                    class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-white/10">Request
+                    a walkthrough</a>
             </div>
         </div>
     </section>
 
-    <!-- PLATFORM (simple + icons) -->
-    <section id="platform" class="border-t border-white/10">
+    <!-- PRODUCTS (3 cards -> link to pages) -->
+    <section id="products" class="border-t border-white/10">
         <div class="mx-auto max-w-6xl px-4 py-14">
             <div class="max-w-2xl">
-                <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">One platform. One brain. Total operational
-                    control.</h2>
+                <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Three products. One ecosystem.</h2>
                 <p class="mt-3 text-slate-200">
-                    Replace fragmented tools with a unified AI control layer that improves reliability, reduces waste,
-                    and speeds up decisions.
+                    Pick what you need today. Scale into the full SYNTRA ecosystem over time.
                 </p>
             </div>
 
-            <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <!-- Planning -->
-                <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div class="mt-10 grid gap-4 md:grid-cols-3">
+                <!-- Dashboard -->
+                <a href="./syntra_dashboard.html"
+                    class="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10">
                     <div class="flex items-center gap-3">
                         <span
                             class="flex h-10 w-10 items-center justify-center rounded-xl bg-syntra-500/20 ring-1 ring-white/10">
-                            <svg class="h-5 w-5 text-syntra-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                aria-hidden="true">
+                            <svg class="h-5 w-5 text-syntra-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 17v-2m6 2v-4m3 6H6a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2z" />
+                                    d="M4 4h7v7H4V4zm9 0h7v4h-7V4zM13 10h7v10h-7V10zM4 13h7v7H4v-7z" />
                             </svg>
                         </span>
-                        <p class="text-sm font-semibold text-white">Planning</p>
+                        <p class="text-sm font-semibold text-white">SYNTRA Dashboard</p>
                     </div>
-                    <p class="mt-3 text-sm text-slate-200">AI-assisted route and schedule planning that adapts to demand
-                        and constraints.</p>
-                </div>
+                    <p class="mt-3 text-sm text-slate-200">
+                        Operations control center: planning, dispatch, monitoring, SLA, and analytics.
+                    </p>
+                    <p class="mt-4 text-xs text-slate-400">Open product →</p>
+                </a>
 
-                <!-- Dispatch -->
-                <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                <!-- IoT -->
+                <a href="./syntra_iot.html"
+                    class="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10">
                     <div class="flex items-center gap-3">
                         <span
                             class="flex h-10 w-10 items-center justify-center rounded-xl bg-syntra-500/20 ring-1 ring-white/10">
-                            <svg class="h-5 w-5 text-syntra-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                aria-hidden="true">
+                            <svg class="h-5 w-5 text-syntra-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 19V5m0 0l-4 4m4-4l4 4" />
+                                    d="M12 20a2 2 0 100-4 2 2 0 000 4zm0-12v4m0 0a4 4 0 014 4m-4-4a4 4 0 00-4 4M4 8a8 8 0 0116 0" />
                             </svg>
                         </span>
-                        <p class="text-sm font-semibold text-white">Dispatch</p>
+                        <p class="text-sm font-semibold text-white">SYNTRA IoT</p>
                     </div>
-                    <p class="mt-3 text-sm text-slate-200">Real-time dispatch recommendations to stabilize headway and
-                        handle incidents.</p>
-                </div>
+                    <p class="mt-3 text-sm text-slate-200">
+                        Connect vehicles and assets: GPS, sensors, CCTV, telemetry, and real-time streams.
+                    </p>
+                    <p class="mt-4 text-xs text-slate-400">Open product →</p>
+                </a>
 
-                <!-- Monitoring -->
-                <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                <!-- Apps -->
+                <a href="./syntra_apps.html"
+                    class="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10">
                     <div class="flex items-center gap-3">
                         <span
                             class="flex h-10 w-10 items-center justify-center rounded-xl bg-syntra-500/20 ring-1 ring-white/10">
-                            <svg class="h-5 w-5 text-syntra-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                aria-hidden="true">
+                            <svg class="h-5 w-5 text-syntra-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3 13h4l3-6 4 10 3-6h4" />
+                                    d="M7 4h10a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2zm5 14h.01" />
                             </svg>
                         </span>
-                        <p class="text-sm font-semibold text-white">Monitoring</p>
+                        <p class="text-sm font-semibold text-white">SYNTRA Apps</p>
                     </div>
-                    <p class="mt-3 text-sm text-slate-200">Live fleet visibility with KPI, SLA, and operational
-                        performance in one view.</p>
-                </div>
-
-                <!-- Optimization -->
-                <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-                    <div class="flex items-center gap-3">
-                        <span
-                            class="flex h-10 w-10 items-center justify-center rounded-xl bg-syntra-500/20 ring-1 ring-white/10">
-                            <svg class="h-5 w-5 text-syntra-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                aria-hidden="true">
-                                <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                                    d="M11.983 13.992l3.535 3.535m0-7.07l-3.535 3.535M12 3v3m0 12v3m9-9h-3M6 12H3" />
-                            </svg>
-                        </span>
-                        <p class="text-sm font-semibold text-white">Optimization</p>
-                    </div>
-                    <p class="mt-3 text-sm text-slate-200">Predictive insights to improve fleet utilization and service
-                        reliability.</p>
-                </div>
+                    <p class="mt-3 text-sm text-slate-200">
+                        Passenger and driver experiences: live arrivals, route info, reporting, and service feedback.
+                    </p>
+                    <p class="mt-4 text-xs text-slate-400">Open product →</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- GALLERY (click to zoom) -->
-    <section id="gallery" class="border-t border-white/10">
+
+    <!-- section syntra dashboard -->
+    <section id="product-dashboard" class="border-t border-white/10">
         <div class="mx-auto max-w-6xl px-4 py-14">
-            <div class="max-w-2xl">
-                <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Visual gallery</h2>
-                <p class="mt-3 text-slate-200">
-                    Tambahin image sebanyak yang kamu mau. Klik gambar untuk zoom.
-                </p>
-            </div>
+            <div class="grid gap-8 md:grid-cols-2 md:items-center">
+                <div class="max-w-xl">
+                    <p
+                        class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
+                        Product
+                    </p>
+                    <h2 class="mt-3 text-2xl font-semibold tracking-tight md:text-3xl">SYNTRA Dashboard</h2>
+                    <p class="mt-3 text-slate-200">
+                        A control center for operators to plan, dispatch, monitor KPIs, and respond to incidents in real
+                        time.
+                    </p>
 
-            <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <!-- Card 1 -->
-                <button type="button"
-                    class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left"
-                    data-zoom-src="/images/syntra-planning.png" data-zoom-alt="Planning dashboard">
-                    <div class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
-                        <p class="text-xs font-semibold text-slate-200">Planning view</p>
-                        <span
-                            class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
-                            to zoom</span>
+                    <div class="mt-5 rounded-3xl border border-white/10 bg-white/5 p-6">
+                        <p class="text-sm font-semibold text-white">What it’s used for</p>
+                        <ul class="mt-3 space-y-2 text-sm text-slate-200">
+                            <li>• Planning: routes, schedules, and scenario testing</li>
+                            <li>• Dispatch: headway stabilization and service recovery</li>
+                            <li>• Monitoring: SLA, KPI, corridor performance, alerts</li>
+                        </ul>
                     </div>
-                    <img src="/images/syntra-planning.png" alt="Planning dashboard"
-                        class="h-52 w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
-                        loading="lazy" />
-                </button>
 
-                <!-- Card 2 -->
-                <button type="button"
-                    class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left"
-                    data-zoom-src="/images/syntra-dispatch-map.png" data-zoom-alt="Dispatch map">
-                    <div class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
-                        <p class="text-xs font-semibold text-slate-200">Dispatch map</p>
-                        <span
-                            class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
-                            to zoom</span>
+                    <div class="mt-6 flex gap-3">
+                        <a href="dashboard.html"
+                            class="inline-flex items-center justify-center rounded-2xl bg-syntra-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-syntra-400">
+                            Open Dashboard page
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-white/10">
+                            Request demo
+                        </a>
                     </div>
-                    <img src="/images/syntra-dispatch-map.png" alt="Dispatch map"
-                        class="h-52 w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
-                        loading="lazy" />
-                </button>
+                </div>
 
-                <!-- Card 3 -->
-                <button type="button"
-                    class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left"
-                    data-zoom-src="/images/syntra-operations-dashboard.png" data-zoom-alt="Operations dashboard">
+                <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-soft">
                     <div class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
-                        <p class="text-xs font-semibold text-slate-200">Ops dashboard</p>
+                        <p class="text-xs font-semibold text-slate-200">Dashboard preview</p>
                         <span
-                            class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
-                            to zoom</span>
+                            class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Template</span>
                     </div>
-                    <img src="/images/syntra-operations-dashboard.png" alt="Operations dashboard"
-                        class="h-52 w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
-                        loading="lazy" />
-                </button>
-
-                <!-- Card 3 -->
-                <button type="button"
-                    class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left"
-                    data-zoom-src="/images/syntra-operations-dashboard.png" data-zoom-alt="Operations dashboard">
-                    <div class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
-                        <p class="text-xs font-semibold text-slate-200">Ops dashboard</p>
-                        <span
-                            class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
-                            to zoom</span>
-                    </div>
-                    <img src="/images/syntra-operations-dashboard.png" alt="Operations dashboard"
-                        class="h-52 w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
-                        loading="lazy" />
-                </button>
-
-                <!-- Card 3 -->
-                <button type="button"
-                    class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left"
-                    data-zoom-src="/images/syntra-operations-dashboard.png" data-zoom-alt="Operations dashboard">
-                    <div class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
-                        <p class="text-xs font-semibold text-slate-200">Ops dashboard</p>
-                        <span
-                            class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
-                            to zoom</span>
-                    </div>
-                    <img src="/images/syntra-operations-dashboard.png" alt="Operations dashboard"
-                        class="h-52 w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
-                        loading="lazy" />
-                </button>
-
-                <!-- Card 3 -->
-                <button type="button"
-                    class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left"
-                    data-zoom-src="/images/syntra-operations-dashboard.png" data-zoom-alt="Operations dashboard">
-                    <div class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
-                        <p class="text-xs font-semibold text-slate-200">Ops dashboard</p>
-                        <span
-                            class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
-                            to zoom</span>
-                    </div>
-                    <img src="/images/syntra-operations-dashboard.png" alt="Operations dashboard"
-                        class="h-52 w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
-                        loading="lazy" />
-                </button>
+                    <img src="/images/product-dashboard.png" alt="SYNTRA Dashboard preview"
+                        class="h-[320px] w-full object-cover opacity-90 md:h-[420px]" loading="lazy" />
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- DISTRIBUTOR (simple) -->
-    <section id="distributor" class="border-t border-white/10">
+    <!-- section snytra iot -->
+    <section id="product-iot" class="border-t border-white/10">
+        <div class="mx-auto max-w-6xl px-4 py-14">
+            <div class="grid gap-8 md:grid-cols-2 md:items-center">
+                <div class="order-1 md:order-2 max-w-xl">
+                    <p
+                        class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
+                        Product
+                    </p>
+                    <h2 class="mt-3 text-2xl font-semibold tracking-tight md:text-3xl">SYNTRA IoT</h2>
+                    <p class="mt-3 text-slate-200">
+                        Connect vehicles and assets into a single real-time stream: GPS, sensors, CCTV, telemetry, and
+                        device events.
+                    </p>
+
+                    <div class="mt-5 rounded-3xl border border-white/10 bg-white/5 p-6">
+                        <p class="text-sm font-semibold text-white">What it’s used for</p>
+                        <ul class="mt-3 space-y-2 text-sm text-slate-200">
+                            <li>• Vehicle telemetry and location reliability</li>
+                            <li>• CCTV or people-count signals into operations</li>
+                            <li>• Device health monitoring and event triggers</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 flex gap-3">
+                        <a href="iot.html"
+                            class="inline-flex items-center justify-center rounded-2xl bg-syntra-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-syntra-400">
+                            Open IoT page
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-white/10">
+                            Discuss integration
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="order-2 md:order-1 overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-soft">
+                    <div class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
+                        <p class="text-xs font-semibold text-slate-200">IoT overview</p>
+                        <span
+                            class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Template</span>
+                    </div>
+                    <img src="/images/product-iot.png" alt="SYNTRA IoT preview"
+                        class="h-[320px] w-full object-cover opacity-90 md:h-[420px]" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section syntra apps -->
+    <section id="product-apps" class="border-t border-white/10">
+        <div class="mx-auto max-w-6xl px-4 py-14">
+            <div class="grid gap-8 md:grid-cols-2 md:items-center">
+                <div class="max-w-xl">
+                    <p
+                        class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
+                        Product
+                    </p>
+                    <h2 class="mt-3 text-2xl font-semibold tracking-tight md:text-3xl">SYNTRA Apps</h2>
+                    <p class="mt-3 text-slate-200">
+                        Passenger and staff experiences that connect to operations: live arrivals, route guidance,
+                        alerts, and reporting.
+                    </p>
+
+                    <div class="mt-5 rounded-3xl border border-white/10 bg-white/5 p-6">
+                        <p class="text-sm font-semibold text-white">What it’s used for</p>
+                        <ul class="mt-3 space-y-2 text-sm text-slate-200">
+                            <li>• Passenger journey: routes, ETAs, service alerts</li>
+                            <li>• Feedback and reporting: issues, incidents, cleanliness</li>
+                            <li>• Staff utilities: tasks, notifications, operational updates</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 flex gap-3">
+                        <a href="apps.html"
+                            class="inline-flex items-center justify-center rounded-2xl bg-syntra-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-syntra-400">
+                            Open Apps page
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-white/10">
+                            Explore use cases
+                        </a>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-soft">
+                    <div class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
+                        <p class="text-xs font-semibold text-slate-200">Apps preview</p>
+                        <span
+                            class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Template</span>
+                    </div>
+                    <img src="/images/product-apps.png" alt="SYNTRA Apps preview"
+                        class="h-[320px] w-full object-cover opacity-90 md:h-[420px]" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- proof/story -->
+    <section id="story" class="border-t border-white/10">
         <div class="mx-auto max-w-6xl px-4 py-14">
             <div class="max-w-3xl">
-                <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Authorized Distributor</h2>
+                <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">
+                    Proven in real operations
+                </h2>
                 <p class="mt-3 text-slate-200">
-                    SYNTRA uses one partnership model: Authorized Distributors. Distributors sell, deploy, and run SLA
-                    in their market.
+                    SYNTRA was shaped under real operational pressure: daily incidents, demand surges, mixed operators,
+                    and strict SLA targets.
+                    The result is a system that works in the field, not just in demos.
                 </p>
             </div>
 
-            <div class="mt-8 grid gap-4 md:grid-cols-3">
+            <div class="mt-10 grid gap-4 md:grid-cols-3">
+                <!-- Box 1 -->
                 <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-                    <p class="text-sm font-semibold text-white">What you do</p>
-                    <ul class="mt-3 space-y-2 text-sm text-slate-200">
-                        <li>Sales & market access</li>
-                        <li>Deployment & integration</li>
-                        <li>Support & SLA delivery</li>
-                    </ul>
+                    <div class="flex items-start gap-3">
+                        <span
+                            class="relative inline-flex h-11 w-11 items-center justify-center rounded-2xl ring-1 ring-white/10 shadow-soft">
+                            <span
+                                class="absolute inset-0 rounded-2xl bg-gradient-to-br from-syntra-400/40 to-indigo-500/20"></span>
+                            <span class="absolute -inset-px rounded-2xl bg-white/5 blur-[6px]"></span>
+                            <svg class="relative h-5 w-5 text-syntra-300" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12l2 2 4-5M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                            </svg>
+                        </span>
+
+                        <div>
+                            <p class="text-sm font-semibold text-white">Designed for operational reality</p>
+                            <p class="mt-2 text-sm text-slate-200">
+                                Handles messy, multi-source inputs and real-world disruptions without breaking
+                                operational flow.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Box 2 -->
                 <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-                    <p class="text-sm font-semibold text-white">What you get</p>
-                    <ul class="mt-3 space-y-2 text-sm text-slate-200">
-                        <li>Core platform & updates</li>
-                        <li>Docs & reference architecture</li>
-                        <li>Training & certification</li>
-                    </ul>
+                    <div class="flex items-start gap-3">
+                        <span
+                            class="relative inline-flex h-11 w-11 items-center justify-center rounded-2xl ring-1 ring-white/10 shadow-soft">
+                            <span
+                                class="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-400/25 to-syntra-500/20"></span>
+                            <span class="absolute -inset-px rounded-2xl bg-white/5 blur-[6px]"></span>
+                            <svg class="relative h-5 w-5 text-emerald-200" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v18m0 0l-4-4m4 4l4-4M4 7h16" />
+                            </svg>
+                        </span>
+
+                        <div>
+                            <p class="text-sm font-semibold text-white">Built for scale and pressure</p>
+                            <p class="mt-2 text-sm text-slate-200">
+                                Proven in dense corridors, high-frequency service, and multi-operator environments with
+                                network-level visibility.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Box 3 -->
                 <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-                    <p class="text-sm font-semibold text-white">Revenue flow</p>
-                    <p class="mt-3 text-sm text-slate-200">Client → Distributor → Platform Fee to SYNTRA</p>
+                    <div class="flex items-start gap-3">
+                        <span
+                            class="relative inline-flex h-11 w-11 items-center justify-center rounded-2xl ring-1 ring-white/10 shadow-soft">
+                            <span
+                                class="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-400/25 to-rose-500/20"></span>
+                            <span class="absolute -inset-px rounded-2xl bg-white/5 blur-[6px]"></span>
+                            <svg class="relative h-5 w-5 text-amber-200" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </span>
+
+                        <div>
+                            <p class="text-sm font-semibold text-white">Actionable, not theoretical</p>
+                            <p class="mt-2 text-sm text-slate-200">
+                                Focused on decisions operators can execute: dispatch actions, service recovery, and
+                                measurable outcomes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reference implementation -->
+            <div
+                class="mt-6 rounded-3xl border border-white/10 bg-gradient-to-r from-syntra-500/15 to-indigo-500/10 p-6">
+                <div class="flex items-start gap-3">
+                    <span
+                        class="relative inline-flex h-11 w-11 items-center justify-center rounded-2xl ring-1 ring-white/10 shadow-soft">
+                        <span
+                            class="absolute inset-0 rounded-2xl bg-gradient-to-br from-syntra-400/35 to-white/5"></span>
+                        <span class="absolute -inset-px rounded-2xl bg-white/5 blur-[6px]"></span>
+                        <svg class="relative h-5 w-5 text-syntra-200" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6M8 6h8a2 2 0 012 2v12a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2z" />
+                        </svg>
+                    </span>
+
+                    <div>
+                        <p class="text-sm font-semibold text-white">Reference implementation</p>
+                        <p class="mt-2 text-sm text-slate-200">
+                            Deployed in a large-scale BRT environment as proof of maturity, reliability, and operational
+                            readiness.
+                        </p>
+                        <p class="mt-3 text-xs text-slate-400">
+                            Replace this line later with your preferred phrasing or specific reference story.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT (simple) -->
+
+
+
+    <!-- contact -->
     <section id="contact" class="border-t border-white/10">
         <div class="mx-auto max-w-6xl px-4 py-14">
             <div class="grid gap-8 md:grid-cols-2">
                 <div class="max-w-xl">
-                    <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Contact</h2>
-                    <p class="mt-3 text-slate-200">Request a walkthrough or discuss deployment in your environment.</p>
+                    <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">See SYNTRA in action</h2>
+                    <p class="mt-3 text-slate-200">Request a walkthrough, ask about deployment, or discuss distribution.
+                    </p>
 
                     <div class="mt-6 space-y-3 text-sm text-slate-200">
                         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
@@ -361,9 +475,8 @@
                 </div>
 
                 <form class="rounded-3xl border border-white/10 bg-white/5 p-6"
-                    onsubmit="event.preventDefault(); alert('Submitted (demo). Hubungkan ke backend/form tool.');">
+                    onsubmit="event.preventDefault(); alert('Submitted (demo).');">
                     <p class="text-sm font-semibold text-white">Send a message</p>
-
                     <div class="mt-5 grid gap-4">
                         <input
                             class="w-full rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-syntra-400 focus:outline-none"
@@ -374,97 +487,28 @@
                         <textarea rows="4"
                             class="w-full rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-syntra-400 focus:outline-none"
                             placeholder="Your message" required></textarea>
-
                         <button type="submit"
-                            class="inline-flex items-center justify-center rounded-2xl bg-syntra-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-syntra-400">
-                            Submit
-                        </button>
+                            class="inline-flex items-center justify-center rounded-2xl bg-syntra-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-syntra-400">Submit</button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="border-t border-white/10">
         <div class="mx-auto max-w-6xl px-4 py-10">
-            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center justify-between">
                 <div class="text-sm text-slate-300">
                     <p class="font-semibold text-white">SYNTRA</p>
-                    <p class="mt-1">AI-powered transport operations platform.</p>
+                    <p class="mt-1">Product suite for fleet operations.</p>
                 </div>
                 <div class="text-xs text-slate-500">© <span id="year"></span> SYNTRA</div>
             </div>
         </div>
     </footer>
 
-    <!-- ZOOM MODAL -->
-    <div id="zoomModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/70 p-4"
-        aria-modal="true" aria-hidden="true">
-        <div class="relative w-full max-w-5xl">
-            <button id="zoomClose" type="button"
-                class="absolute -top-3 -right-3 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-950/80 text-white hover:bg-slate-950"
-                aria-label="Close">
-                ✕
-            </button>
-
-            <div class="overflow-hidden rounded-3xl border border-white/10 bg-slate-950 shadow-soft">
-                <div class="flex items-center justify-between border-b border-white/10 bg-white/5 px-4 py-3">
-                    <p id="zoomTitle" class="text-xs font-semibold text-slate-200">Preview</p>
-                    <p class="text-[11px] text-slate-400">Press ESC to close</p>
-                </div>
-
-                <img id="zoomImg" src="" alt="" class="max-h-[75vh] w-full object-contain bg-black/20" />
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Footer year
         document.getElementById("year").textContent = new Date().getFullYear();
-
-        // Simple image zoom (lightbox)
-        const modal = document.getElementById("zoomModal");
-        const zoomImg = document.getElementById("zoomImg");
-        const zoomTitle = document.getElementById("zoomTitle");
-        const closeBtn = document.getElementById("zoomClose");
-
-        function openZoom(src, alt) {
-            zoomImg.src = src;
-            zoomImg.alt = alt || "Preview";
-            zoomTitle.textContent = alt || "Preview";
-
-            modal.classList.remove("hidden");
-            modal.classList.add("flex");
-            modal.setAttribute("aria-hidden", "false");
-            document.body.classList.add("modal-open");
-        }
-
-        function closeZoom() {
-            modal.classList.add("hidden");
-            modal.classList.remove("flex");
-            modal.setAttribute("aria-hidden", "true");
-            zoomImg.src = "";
-            zoomImg.alt = "";
-            document.body.classList.remove("modal-open");
-        }
-
-        // Bind click on gallery items
-        document.querySelectorAll("[data-zoom-src]").forEach((el) => {
-            el.addEventListener("click", () => {
-                openZoom(el.getAttribute("data-zoom-src"), el.getAttribute("data-zoom-alt"));
-            });
-        });
-
-        // Close actions
-        closeBtn.addEventListener("click", closeZoom);
-        modal.addEventListener("click", (e) => {
-            // close if clicking backdrop
-            if (e.target === modal) closeZoom();
-        });
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeZoom();
-        });
     </script>
 </body>
 
