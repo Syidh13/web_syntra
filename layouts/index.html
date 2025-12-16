@@ -53,15 +53,7 @@
             <a href="index.html" class="flex items-center gap-2">
                 <span
                     class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/10">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path
-                            d="M20 7.5V16.5C20 18.9853 17.9853 21 15.5 21H8.5C6.01472 21 4 18.9853 4 16.5V7.5C4 5.01472 6.01472 3 8.5 3H15.5C17.9853 3 20 5.01472 20 7.5Z"
-                            stroke="currentColor" class="text-syntra-300" stroke-width="1.6" />
-                        <path d="M7.5 12H16.5" stroke="currentColor" class="text-syntra-300" stroke-width="1.6"
-                            stroke-linecap="round" />
-                        <path d="M12 7.5V16.5" stroke="currentColor" class="text-syntra-300" stroke-width="1.6"
-                            stroke-linecap="round" />
-                    </svg>
+                    <img src="../src/lg_logogram_syntra.png" class="p-1.5" alt="">
                 </span>
                 <span class="text-sm font-semibold tracking-wide">SYNTRA</span>
             </a>
@@ -77,33 +69,47 @@
         </div>
     </header>
 
-    <!-- hero -->
-    <section class="mx-auto max-w-6xl px-4 py-16">
-        <p
-            class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
-            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-            Proven at megacity scale. Built in Indonesia.
-        </p>
 
-        <div class="mt-5 max-w-3xl">
-            <h1 class="text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
-                One System for Every Fleet
-            </h1>
-            <p class="mt-4 text-base leading-relaxed text-slate-200 md:text-lg">
-                SYNTRA is a product suite for real operations: control center dashboards, connected IoT, and
-                passenger-facing apps.
-            </p>
+    <!-- HERO (centered) -->
+    <section id="top">
+        <div class="mx-auto max-w-6xl px-4 py-20">
+            <div class="flex flex-col items-center text-center">
 
-            <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-                <a href="#products"
-                    class="inline-flex items-center justify-center rounded-2xl bg-syntra-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-syntra-400">Explore
-                    products</a>
-                <a href="#contact"
-                    class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-white/10">Request
-                    a walkthrough</a>
+                <!-- Badge -->
+                <p
+                    class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-slate-200">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                    Proven at megacity scale. Built in Indonesia.
+                </p>
+
+                <!-- Headline -->
+                <h1 class="mt-6 max-w-3xl text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
+                    One system for every fleet
+                </h1>
+
+                <!-- Description -->
+                <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate-200 md:text-lg">
+                    SYNTRA is a product suite for real operations — dashboards, connected IoT,
+                    and apps that keep fleets reliable, visible, and under control.
+                </p>
+
+                <!-- CTA -->
+                <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row">
+                    <a href="#products"
+                        class="inline-flex items-center justify-center rounded-2xl bg-syntra-500 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-syntra-400">
+                        Explore products
+                    </a>
+
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 hover:bg-white/10">
+                        Request a walkthrough
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
+
 
     <!-- PRODUCTS (3 cards -> link to pages) -->
     <section id="products" class="border-t border-white/10">
