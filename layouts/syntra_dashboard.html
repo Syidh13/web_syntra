@@ -5,54 +5,436 @@
     <link rel="icon" type="image/x-icon" href="/web_syntra/media/lg_logogram_syntra.ico">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SYNTRA Dashboard</title>
+    <title>SYNTRA Dashboard — Operations Control Center</title>
+    <meta name="description"
+        content="SYNTRA Dashboard: control center for planning, dispatch, monitoring, analytics, and SLA." />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: { colors: { syntra: { 300: "#7dd3fc", 400: "#38bdf8", 500: "#0ea5e9" } }, boxShadow: { soft: "0 10px 30px rgba(2,132,199,.10)" } } } };
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        syntra: {
+                            300: "#7dd3fc",
+                            400: "#38bdf8",
+                            500: "#0ea5e9",
+                            900: "#0c4a6e",
+                            950: "#082f49",
+                        },
+                    },
+                    boxShadow: {
+                        soft: "0 10px 30px rgba(2, 132, 199, 0.10)",
+                    },
+                },
+            },
+        };
     </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body class="bg-slate-950 text-slate-100">
+    <!-- glow -->
     <div class="pointer-events-none fixed inset-0 -z-10">
         <div
             class="absolute -top-40 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-syntra-500/25 blur-3xl">
         </div>
+        <div class="absolute -bottom-[180px] -left-[180px] h-[520px] w-[520px] rounded-full bg-emerald-500/10 blur-3xl">
+        </div>
     </div>
 
+    <!-- Header -->
     <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur">
         <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-            <a href="index.html" class="text-sm text-slate-200 hover:text-white">← Back</a>
-            <span class="text-sm font-semibold">SYNTRA Dashboard</span>
-            <a href="index.html#contact" class="text-sm text-syntra-300 hover:text-white">Contact</a>
+            <a href="index.html" class="text-sm text-slate-200 hover:text-white">← Back to home</a>
+
+            <nav class="hidden items-center gap-5 text-sm text-slate-200 md:flex">
+                <a href="#features" class="hover:text-white">Features</a>
+                <a href="#modules" class="hover:text-white">Modules</a>
+                <a href="#contact" class="hover:text-white">Contact</a>
+            </nav>
+
+            <a href="#contact"
+                class="inline-flex items-center justify-center rounded-xl bg-syntra-500 px-3 py-2 text-sm font-semibold text-slate-950 hover:bg-syntra-400">
+                Request demo
+            </a>
         </div>
     </header>
 
-    <main class="mx-auto max-w-6xl px-4 py-14">
-        <h1 class="text-3xl font-semibold md:text-4xl">Operations control center</h1>
-        <p class="mt-3 max-w-2xl text-slate-200">
-            Planning, dispatch, monitoring, analytics, KPI and SLA in one operational view.
-        </p>
+    <!-- HERO -->
+    <section>
+        <div class="mx-auto max-w-6xl px-4 py-16">
+            <p
+                class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-slate-200">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                SYNTRA Dashboard
+            </p>
 
-        <div class="mt-10 grid gap-4 md:grid-cols-3">
-            <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-                <p class="text-sm font-semibold text-white">Planning</p>
-                <p class="mt-2 text-sm text-slate-200">Schedules, routes, resource planning, scenario testing.</p>
+            <div class="mt-5 grid gap-10 md:grid-cols-2 md:items-center">
+                <div class="max-w-xl">
+                    <h1 class="text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
+                        Operations control center for real-time decisions
+                    </h1>
+                    <p class="mt-4 text-base leading-relaxed text-slate-200 md:text-lg">
+                        Planning, dispatch, monitoring, verification, and performance analytics in one unified view.
+                        Built to support day-to-day operations and SLA accountability.
+                    </p>
+
+                    <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+                        <a href="#modules"
+                            class="inline-flex items-center justify-center rounded-2xl bg-syntra-500 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-syntra-400">
+                            Explore modules
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 hover:bg-white/10">
+                            Talk to us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <button type="button"
+                    class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-soft text-left"
+                    data-zoom-src="/images/dash-hero.png" data-zoom-alt="SYNTRA Dashboard overview">
+                    <div class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
+                        <p class="text-xs font-semibold text-slate-200">Dashboard overview</p>
+                        <span
+                            class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
+                            to zoom</span>
+                    </div>
+                    <img src="/images/dash-hero.png" alt="SYNTRA Dashboard overview"
+                        class="h-[320px] w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
+                        loading="lazy" />
+                </button>
             </div>
-            <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-                <p class="text-sm font-semibold text-white">Dispatch</p>
-                <p class="mt-2 text-sm text-slate-200">Headway stabilization, incident handling, real-time actions.</p>
-            </div>
-            <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-                <p class="text-sm font-semibold text-white">Monitoring</p>
-                <p class="mt-2 text-sm text-slate-200">Live fleet visibility, corridor performance, SLA tracking.</p>
+
+            <!-- Quick value cards -->
+            <div id="features" class="mt-10 grid gap-4 md:grid-cols-3">
+                <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                    <p class="text-sm font-semibold text-white">Single operational truth</p>
+                    <p class="mt-2 text-sm text-slate-200">One view for corridor, fleet, operator performance, and
+                        incidents.</p>
+                </div>
+                <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                    <p class="text-sm font-semibold text-white">Action-first workflows</p>
+                    <p class="mt-2 text-sm text-slate-200">Dispatch suggestions and operational actions, not just
+                        charts.</p>
+                </div>
+                <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                    <p class="text-sm font-semibold text-white">Audit-ready</p>
+                    <p class="mt-2 text-sm text-slate-200">Verification layer for mileage, trips, and SLA reporting.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="mt-10 rounded-3xl border border-white/10 bg-white/5 p-6">
-            <p class="text-sm font-semibold text-white">Place your images here</p>
-            <p class="mt-2 text-sm text-slate-200">Add screenshots of dashboard, maps, charts, or AI alerts.</p>
+    <!-- MODULES -->
+    <section id="modules" class="border-t border-white/10">
+        <div class="mx-auto max-w-6xl px-4 py-14">
+            <div class="max-w-2xl">
+                <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Key modules</h2>
+                <p class="mt-3 text-slate-200">
+                    A practical set of modules that cover daily operations end-to-end.
+                    Replace images with your real screenshots later.
+                </p>
+            </div>
+
+            <div class="mt-10 space-y-12">
+
+                <!-- Asset Monitoring -->
+                <div class="grid gap-6 md:grid-cols-2 md:items-center">
+                    <div class="max-w-xl">
+                        <h3 class="text-xl font-semibold text-white">Asset Monitoring</h3>
+                        <p class="mt-2 text-slate-200">
+                            Live visibility for vehicle status, device health, and operational readiness across fleets.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-sm text-slate-200">
+                            <li>• Fleet availability and status (active, standby, breakdown)</li>
+                            <li>• Device connectivity and data freshness indicators</li>
+                            <li>• Maintenance flags, downtime trends, and utilization</li>
+                        </ul>
+                    </div>
+
+                    <button type="button"
+                        class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-soft text-left"
+                        data-zoom-src="../media/img_dashboard_assetMonitoring.png"
+                        data-zoom-alt="Asset Monitoring module">
+                        <div
+                            class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
+                            <p class="text-xs font-semibold text-slate-200">Asset Monitoring</p>
+                            <span
+                                class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
+                                to zoom</span>
+                        </div>
+                        <img src="../media/img_dashboard_assetMonitoring.png" alt="Asset Monitoring"
+                            class="h-[320px] w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
+                            loading="lazy" />
+                    </button>
+                </div>
+
+                <!-- Headway Management -->
+                <div class="grid gap-6 md:grid-cols-2 md:items-center">
+                    <button type="button"
+                        class="order-2 md:order-1 group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-soft text-left"
+                        data-zoom-src="../media/img_dashboard_headway.png" data-zoom-alt="Headway Management module">
+                        <div
+                            class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
+                            <p class="text-xs font-semibold text-slate-200">Headway Management</p>
+                            <span
+                                class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
+                                to zoom</span>
+                        </div>
+                        <img src="../media/img_dashboard_headway.png" alt="Headway Management"
+                            class="h-[320px] w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
+                            loading="lazy" />
+                    </button>
+
+                    <div class="order-1 md:order-2 max-w-xl">
+                        <h3 class="text-xl font-semibold text-white">Headway Management</h3>
+                        <p class="mt-2 text-slate-200">
+                            Keep service stable by monitoring gaps and bunching, with clear recommendations for recovery
+                            actions.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-sm text-slate-200">
+                            <li>• Detect bunching, gaps, and abnormal dwell time</li>
+                            <li>• Dispatch suggestions: hold, short-turn, add/remove unit</li>
+                            <li>• Corridor-level heat view and incident overlays</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mileage Verification -->
+                <div class="grid gap-6 md:grid-cols-2 md:items-center">
+                    <div class="max-w-xl">
+                        <h3 class="text-xl font-semibold text-white">Mileage Verification</h3>
+                        <p class="mt-2 text-slate-200">
+                            Verification layer to reconcile planned trips vs actual movements, useful for SLA and
+                            billing integrity.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-sm text-slate-200">
+                            <li>• Validate trips, mileage, and route compliance</li>
+                            <li>• Flag anomalies: detours, missing trips, GPS gaps</li>
+                            <li>• Export-ready evidence for audit and reporting</li>
+                        </ul>
+                    </div>
+
+                    <button type="button"
+                        class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-soft text-left"
+                        data-zoom-src="../media/img_dashboard_millage.png" data-zoom-alt="Mileage Verification module">
+                        <div
+                            class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
+                            <p class="text-xs font-semibold text-slate-200">Mileage Verification</p>
+                            <span
+                                class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
+                                to zoom</span>
+                        </div>
+                        <img src="../media/img_dashboard_millage.png" alt="Mileage Verification"
+                            class="h-[320px] w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
+                            loading="lazy" />
+                    </button>
+                </div>
+
+                <!-- Scheduling -->
+                <div class="grid gap-6 md:grid-cols-2 md:items-center">
+                    <button type="button"
+                        class="order-2 md:order-1 group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-soft text-left"
+                        data-zoom-src="../media/img_dashboard_scheduling.png" data-zoom-alt="Scheduling module">
+                        <div
+                            class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
+                            <p class="text-xs font-semibold text-slate-200">Scheduling</p>
+                            <span
+                                class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
+                                to zoom</span>
+                        </div>
+                        <img src="../media/img_dashboard_scheduling.png" alt="Scheduling"
+                            class="h-[320px] w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
+                            loading="lazy" />
+                    </button>
+
+                    <div class="order-1 md:order-2 max-w-xl">
+                        <h3 class="text-xl font-semibold text-white">Scheduling</h3>
+                        <p class="mt-2 text-slate-200">
+                            Plan service across time blocks, fleets, and corridors with constraints and scenario
+                            comparison.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-sm text-slate-200">
+                            <li>• Timetable planning with constraints and capacity</li>
+                            <li>• Scenario compare: demand shift, event days, disruptions</li>
+                            <li>• Export for GTFS or operational deployment</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Driver Performance -->
+                <div class="grid gap-6 md:grid-cols-2 md:items-center">
+                    <div class="max-w-xl">
+                        <h3 class="text-xl font-semibold text-white">Driver Performance</h3>
+                        <p class="mt-2 text-slate-200">
+                            Performance signals for safety, compliance, and operational quality. Useful for coaching and
+                            accountability.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-sm text-slate-200">
+                            <li>• Driving behavior, compliance, incident history</li>
+                            <li>• On-time adherence and operational discipline</li>
+                            <li>• Ranking, coaching notes, and improvement tracking</li>
+                        </ul>
+                    </div>
+
+                    <button type="button"
+                        class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-soft text-left"
+                        data-zoom-src="../media/img_dashboard_driver.png" data-zoom-alt="Driver Performance module">
+                        <div
+                            class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
+                            <p class="text-xs font-semibold text-slate-200">Driver Performance</p>
+                            <span
+                                class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
+                                to zoom</span>
+                        </div>
+                        <img src="../media/img_dashboard_driver.png" alt="Driver Performance"
+                            class="h-[320px] w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
+                            loading="lazy" />
+                    </button>
+                </div>
+
+                <!-- Incident + SLA -->
+                <div class="grid gap-6 md:grid-cols-2 md:items-center">
+                    <button type="button"
+                        class="order-2 md:order-1 group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-soft text-left"
+                        data-zoom-src="../media/img_dashboard_dispacing.png" data-zoom-alt="Incident & SLA module">
+                        <div
+                            class="flex items-center justify-between border-b border-white/10 bg-slate-950/30 px-4 py-3">
+                            <p class="text-xs font-semibold text-slate-200">Incident & SLA</p>
+                            <span
+                                class="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] text-slate-300">Click
+                                to zoom</span>
+                        </div>
+                        <img src="../media/img_dashboard_dispacing.png" alt="Incident & SLA"
+                            class="h-[320px] w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.02]"
+                            loading="lazy" />
+                    </button>
+
+                    <div class="order-1 md:order-2 max-w-xl">
+                        <h3 class="text-xl font-semibold text-white">Incident & SLA</h3>
+                        <p class="mt-2 text-slate-200">
+                            Track incidents, response times, and SLA outcomes with clear visibility across operators and
+                            corridors.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-sm text-slate-200">
+                            <li>• Incident timeline and operational actions</li>
+                            <li>• SLA dashboards with drill-down evidence</li>
+                            <li>• Reporting exports for stakeholders</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Contact CTA (simple) -->
+    <section id="contact" class="border-t border-white/10">
+        <div class="mx-auto max-w-6xl px-4 py-14">
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
+                <div class="grid gap-6 md:grid-cols-2 md:items-center">
+                    <div>
+                        <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">See the Dashboard in your context
+                        </h2>
+                        <p class="mt-3 text-slate-200">Request a walkthrough and we’ll map the modules to your
+                            operational needs.</p>
+                    </div>
+                    <div class="flex flex-col gap-3 sm:flex-row md:justify-end">
+                        <a href="index.html#contact"
+                            class="inline-flex items-center justify-center rounded-2xl bg-syntra-500 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-syntra-400">
+                            Contact SYNTRA
+                        </a>
+                        <a href="index.html"
+                            class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 hover:bg-white/10">
+                            Back to home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10">
+        <div class="mx-auto max-w-6xl px-4 py-10">
+            <div class="flex items-center justify-between">
+                <div class="text-sm text-slate-300">
+                    <p class="font-semibold text-white">SYNTRA Dashboard</p>
+                    <p class="mt-1">Operations control center.</p>
+                </div>
+                <div class="text-xs text-slate-500">© <span id="year"></span> SYNTRA</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ZOOM MODAL -->
+    <div id="zoomModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/70 p-4"
+        aria-modal="true" aria-hidden="true">
+        <div class="relative w-full max-w-5xl">
+            <button id="zoomClose" type="button"
+                class="absolute -top-3 -right-3 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-950/80 text-white hover:bg-slate-950"
+                aria-label="Close">✕</button>
+
+            <div class="overflow-hidden rounded-3xl border border-white/10 bg-slate-950 shadow-soft">
+                <div class="flex items-center justify-between border-b border-white/10 bg-white/5 px-4 py-3">
+                    <p id="zoomTitle" class="text-xs font-semibold text-slate-200">Preview</p>
+                    <p class="text-[11px] text-slate-400">Press ESC to close</p>
+                </div>
+                <img id="zoomImg" src="" alt="" class="max-h-[75vh] w-full object-contain bg-black/20" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const modal = document.getElementById("zoomModal");
+        const zoomImg = document.getElementById("zoomImg");
+        const zoomTitle = document.getElementById("zoomTitle");
+        const closeBtn = document.getElementById("zoomClose");
+
+        function openZoom(src, alt) {
+            zoomImg.src = src;
+            zoomImg.alt = alt || "Preview";
+            zoomTitle.textContent = alt || "Preview";
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+        }
+
+        function closeZoom() {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+            modal.setAttribute("aria-hidden", "true");
+            zoomImg.src = "";
+            zoomImg.alt = "";
+            document.body.classList.remove("modal-open");
+        }
+
+        document.querySelectorAll("[data-zoom-src]").forEach((el) => {
+            el.addEventListener("click", () => {
+                openZoom(el.getAttribute("data-zoom-src"), el.getAttribute("data-zoom-alt"));
+            });
+        });
+
+        closeBtn.addEventListener("click", closeZoom);
+        modal.addEventListener("click", (e) => { if (e.target === modal) closeZoom(); });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeZoom();
+        });
+    </script>
 </body>
 
 </html>
